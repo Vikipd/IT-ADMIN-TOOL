@@ -1,0 +1,44 @@
+# General Project Files
+.DS_Store
+.vscode/
+
+# Environment variables
+# This will ignore any .env file in any subfolder
+**/.env
+
+# --- Backend Specific ---
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+
+# Django files
+backend/db.sqlite3
+backend/staticfiles/
+backend/media/
+
+# Python Virtual Environment
+# THIS IS THE MOST IMPORTANT LINE
+backend/venv/
+
+
+# --- Frontend Specific ---
+
+# Dependencies
+frontend/node_modules/
+frontend/build/
+
+# Yarn/PNP log files
+frontend/.pnp
+frontend/.pnp.js
+frontend/yarn-error.log
+
+# Testing
+frontend/coverage/
+
+# Local .env files (from Create React App defaults)
+# We keep these rules just in case
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local

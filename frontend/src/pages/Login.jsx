@@ -120,12 +120,14 @@ import { toast } from 'react-hot-toast';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../constants';
 import { jwtDecode } from 'jwt-decode';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -218,7 +220,10 @@ function Login() {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" className="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200" required autoComplete="current-password" />
+                                <input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" className="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200" required autoComplete="current-password" />
+                                <span onClick={() => setShowPassword(!showPassword)} style={{ cursor: 'pointer', position: 'absolute', right: '10px', top: '12px' }}>
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                </span>
                             </div>
                             <div className="flex items-center justify-end text-sm">
                                 <button type="button" onClick={handleForgotPasswordClick} className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">Forgot your password?</button>

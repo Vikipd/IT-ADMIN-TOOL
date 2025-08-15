@@ -15,3 +15,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* --- START PROFESSIONAL MOBILE STYLES --- */
+
+/* This targets screens smaller than a typical tablet (1024px is the 'lg' breakpoint in Tailwind) */
+@media (max-width: 1023px) {
+  /* This finds the main container that switches from row to column */
+  .lg\:flex-row {
+    /* On mobile, we don't need a huge fixed height */
+    min-height: auto !important; 
+    border-radius: 0 !important; /* Make it full-width on mobile */
+  }
+
+  /* This targets the blue design part */
+  .from-blue-500.to-teal-400 {
+     /* Give it a nice, modern rounded bottom corner when it's stacked on top */
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+}
+
+/* --- END PROFESSIONAL MOBILE STYLES --- */

@@ -136,7 +136,7 @@ function Login() {
                 />
                 <span
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-gray-500"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-gray-500 mt-7"
                 >
                   {showPassword ? (
                     <FaEyeSlash size={20} />
